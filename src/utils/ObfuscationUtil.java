@@ -8,14 +8,14 @@ import org.slf4j.LoggerFactory;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
-class ObfuscationUtil {
+public class ObfuscationUtil {
   private static final Logger LOGGER = LoggerFactory.getLogger(ObfuscationUtil.class);
 
   private ObfuscationUtil() {
     throw new IllegalStateException("Obfuscation class");
   }
 
-  private static String obfuscateData(String data) {
+  public static String obfuscateData(String data) {
     try {
       MessageDigest digest = MessageDigest.getInstance("SHA-256");
       byte[] encodeHash = digest.digest(data.getBytes(StandardCharsets.UTF_8));
